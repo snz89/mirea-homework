@@ -1,0 +1,98 @@
+// Задание «Монахи»
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    int students[600][3];  // Массив учеников и их учителей
+    int teachers[600];     // Массив учителей для каждого ученика
+    int teachers_2[2][3];  // Массив для хранения учителей двух учеников
+    int choice, student1, student2;
+    int common_teacher = 0;
+
+    cin >> choice;
+
+    // Исходные данные
+    students[31][0] = 41; students[31][1] = 42; students[31][2] = 43;
+    students[24][0] = 31; students[24][1] = 32; students[24][2] = 0;
+    students[23][0] = 33; students[23][1] = 34; students[23][2] = 0;
+    students[12][0] = 24; students[12][1] = 25; students[12][2] = 0;
+    students[10][0] = 21; students[10][1] = 22; students[10][2] = 23;
+    students[0][0] = 11; students[0][1] = 12; students[0][2] = 13;
+
+    for (int i = 0; i < 600; i++) {
+        teachers[i] = -1;
+    }
+    for (int student = 0; student < 600; student++) {
+        for (int i = 0; i < 600; i++) {
+            for (int j = 0; j <= 2; j++) {
+                if (students[i][j] == student + 1) {
+                    teachers[student] = i + 1;
+                }
+            }
+        }
+    }
+
+    if (choice == 1) {
+        cin >> student1;
+        if (student1 < 1 || student1 > 600) {
+            cout << "Введен неверный номер";
+            return 0;
+        }
+        if (teachers[student1 - 1] == -1) {
+            cout << "Не ученик" << endl;
+            return 0;
+        }
+        else {
+            common_teacher = teachers[student1 - 1];
+            cout << "Ученик, его учителя " << common_teacher;
+            while (common_teacher != 1) {
+                common_teacher = teachers[common_teacher - 1];
+                if (common_teacher == -1 || common_teacher == 1) {
+                    return 0;
+                }
+                else {
+                    cout << ", " << common_teacher;
+                }
+            }
+        }
+    }
+
+    if (choice == 2) {
+        cin >> student1;
+        cin >> student2;
+        if (student1 < 1 || student1 > 600 || student2 < 1 || student2 > 600) {
+            cout << "Введен неверный номер";
+            return 0;
+        }
+        if (teachers[student1 - 1] == -1) {
+            cout << student1 << " - не ученик" << endl;
+        }
+        if (teachers[student2 - 1] == -1) {
+            cout << student2 << " - не ученик" << endl;
+        }
+        else {
+            common_teacher = student1;
+            for (int i = 0; i < 3; i++) {
+                teachers_2[0][i] = teachers[common_teacher - 1];
+                common_teacher = teachers[common_teacher - 1];
+            }
+            common_teacher = student2;
+            for (int i = 0; i < 3; i++) {
+                teachers_2[1][i] = teachers[common_teacher - 1];
+                common_teacher = teachers[common_teacher - 1];
+            }
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    if (teachers_2[0][i] == teachers_2[1][j]) {
+                        cout << student1 << " и " << student2 << " оба ученики, и их общий учитель " << teachers_2[0][i];
+                    }
+                }
+            }
+        }
+    }
+    return 0;
+}
