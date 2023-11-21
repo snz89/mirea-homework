@@ -96,3 +96,165 @@ int main()
     }
     return 0;
 }
+
+// Башня
+#include <iostream>
+using namespace std;
+
+
+void towers(int n, int from, int to, int temp, int& count)
+{
+    if (n != 0) {
+        towers(n - 1, from, temp, to, count);
+        towers(n - 1, temp, to, from, count);
+        count++;
+    }
+}
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    int n = 3;
+    int count = 0;
+    int from = 1, temp = 2, to = 3;
+
+    cout << "Введите n: ";
+    cin >> n;
+
+    towers(n, from, temp, to, count);
+    cout << "Число перестановок: " << count;
+
+    return 0;
+}
+
+// Быки и коровы
+#include <iostream>
+#include <string>
+#include <random>
+using namespace std;
+
+void number_enter(string& my_number, bool s) {
+    if (s == 0) {
+        cout << "Введите число, состоящее из 4 цифр: ";
+    }
+    else {
+        cout << "Введите другое число: ";
+    }
+    cin >> my_number;
+
+    if (size(my_number) != 4) { // Проверка на длину числа
+        cout << "Вы ввели число не из 4 цифр" << endl;
+        number_enter(my_number, 0);
+    }
+}
+
+void removeDuplicates(int array[], int& n) {
+    if (n <= 1) {
+        return;
+    }
+
+    int index = 0;
+
+    for (int i = 1; i < n; ++i) {
+        if (array[i] != array[index]) {
+            array[i + index] = array[i];
+        }
+    }
+
+    n = index + 1;
+}
+
+void minuses(string num1, string num2, int& minus) {
+    int array1[4]{}, array2[4]{};
+    int array1_size = 4, array2_size = 4;
+
+    for (int k = 0; k < 4; k++) {
+        array1[k] = num1[k];
+        array2[k] = num2[k];
+    }
+
+    sort(array1, array1 + 4);
+    sort(array2, array2 + 4);
+
+    removeDuplicates(array1, array1_size);
+    removeDuplicates(array2, array2_size);
+
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 3; j++)
+            if (array1[i] == array2[j]) {
+                minus++;
+            }
+    }
+}
+
+void pluses(string computer_number, string my_number, int& plus) { // Поиск плюсов
+    for (int i = 0; i < 4; i++) {
+        if (computer_number[i] == my_number[i]) {
+            plus++;
+        }
+    }
+}
+
+void computer_number_generator(string& computer_number) {
+    // Генератор случайного числа
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<int> distribution(1000, 9999);
+    int random_number = distribution(gen);
+    string h = to_string(random_number);
+    int count = 0;
+
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            if (i != j && int(h[i]) == int(h[j])) {
+                count += 1;
+            }
+        }
+    }
+
+    if (count > 0) {
+        computer_number_generator(computer_number);
+    }
+    else {
+        computer_number = h;
+    }
+}
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+
+    int count = 1; // Количество попыток, за которое выиграли
+    int plus = 0; // Кол-во плюсов
+    int minus = 0; // Кол-во минусов
+    string computer_number; // Не должно содержать одинаковых чисел, добавить генератор чисел
+    string my_number;
+
+    computer_number_generator(computer_number);
+    cout << computer_number << endl;
+
+    number_enter(my_number, 0);
+    cout << endl;
+
+    while (plus < 4) {
+        plus = 0;
+        minus = 0;
+
+        pluses(computer_number, my_number, plus);
+        minuses(computer_number, my_number, minus);
+
+        if (plus == 4) {
+            cout << "Вы выиграли за " << count << " попыток!";
+            return 0;
+        }
+
+        cout << "----- Попытка №" << count << " -----" << endl;
+        cout << "Кол-во плюсов: " << plus << endl;
+        cout << "Кол-во минусов: " << minus << endl;
+        count++;
+
+        number_enter(my_number, 1);
+        cout << endl;
+    }
+}
