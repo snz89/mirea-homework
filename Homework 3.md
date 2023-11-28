@@ -1,4 +1,6 @@
-// Задача 3.1 «Заем»
+## Домашняя работа 3
+### Задача 3.1 «Заем»
+```C++
 #include <iostream>
 using namespace std;
 
@@ -31,8 +33,10 @@ int main()
     cout << "m = " << m << endl;
     return 0;
 }
+```
 
-// Задача 3.2
+## Задача 3.2 «Ссуда»
+```C++
 #include <iostream>
 using namespace std;
 
@@ -56,8 +60,10 @@ int main()
 		}
 	}
 }
+```
 
-// Задача 3.3
+### Задача 3.3 «Копирование файла»
+```C++
 #include <iostream>
 #include <windows.h>
 #include <fstream>
@@ -82,8 +88,10 @@ int main()
 
 	return 0;
 }
+```
 
-// Задача 3.4
+### Задача 3.4 «Фильтр»
+```C++
 #include <iostream>
 #include <windows.h>
 #include <fstream>
@@ -108,8 +116,10 @@ int main()
 	}
 	return 0;
 }
+```
 
-// Задача 3.5 - пузырьковая сортировка
+## Задача 3.5 «Сортировка букв» - пузырьковая сортировка
+```C++
 #include <iostream>
 #include <windows.h>
 #include <fstream>
@@ -154,8 +164,10 @@ int main()
 	cout << buf2 << endl;
 	return 0;
 }
+```
 
-// Задача 3.5 - сортировка с помощью двоичного дерева
+## Задача 3.5 «Сортировка букв» - сортировка с помощью двоичного дерева
+```C++
 #include <iostream>
 #include <windows.h>
 #include <fstream>
@@ -222,3 +234,4 @@ int main() {
 
     return 0;
 }
+```
