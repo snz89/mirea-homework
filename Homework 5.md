@@ -1,4 +1,6 @@
-// Задание «Алгоритм Евклида»
+## Домашняя работа 5
+### Задание «Алгоритм Евклида»
+```C++
 #include <iostream>
 #include <windows.h>
 #include <math.h>
@@ -59,7 +61,9 @@ int main()
 	cout << "НОД, полученный вычитанием: " << temp_1 << endl;
 	return 0;
 }
+```
 
+```C++
 // Задание «Решето Эратосфена»
 #include <iostream>
 #include <windows.h>
@@ -101,8 +105,10 @@ int main()
 
 	return 0;
 }
+```
 
-// Задание «Обработка текстовых файлов» (13 - Запись текста в текстовый файл)
+### Задание «Обработка текстовых файлов» (13 - Запись текста в текстовый файл)
+```C++
 #include <iostream>
 #include <windows.h>
 #include <string>
@@ -131,8 +137,10 @@ int main()
 
 	return 0;
 }
+```
 
-// Задание «Ряды» - 1
+### Задание «Ряды» - 1
+```C++
 #include <iostream>
 #include <windows.h>
 #include <math.h>
@@ -157,8 +165,10 @@ int main()
 
 	return 0;
 }
+```
 
-// Задание «Ряды» - 3
+### Задание «Ряды» - 3
+```C++
 #include <iostream>
 #include <windows.h>
 #include <math.h>
@@ -189,9 +199,10 @@ int main()
 
 	return 0;
 }
+```
 
-// Задание «Файлы» - 13
-
+### Задание «Файлы» - 13
+```C++
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -307,3 +318,4 @@ int main() {
         for (int i = 0; i < strlen(readLine2); i++) {
             cout << readLine2[i];
         }
+```
