@@ -1,5 +1,6 @@
-// Задание «Монахи»
-
+## Другие задания
+### Задание «Монахи»
+```C++
 #include <iostream>
 using namespace std;
 
@@ -96,8 +97,10 @@ int main()
     }
     return 0;
 }
+```
 
-// Башня
+### Башня
+```C++
 #include <iostream>
 using namespace std;
 
@@ -127,8 +130,10 @@ int main()
 
     return 0;
 }
+```
 
-// Быки и коровы
+### Быки и коровы
+```C++
 #include <iostream>
 #include <string>
 #include <random>
@@ -245,7 +250,10 @@ int main()
         cout << endl;
     }
 }
+```
 
+### Шарики
+```C++
 // Шарики
 #include <iostream>
 using namespace std;
@@ -298,3 +306,4 @@ int main()
     cout << "Количество перестановок: " << perm_count << endl;
     delete[] balls;
 }
+```
