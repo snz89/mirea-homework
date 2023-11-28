@@ -1,4 +1,6 @@
-// Задача 4.1 «Файл»
+## Домашняя работа 4
+### Задача 4.1 «Файл»
+```C++
 #include <iostream>
 #include <windows.h>
 #include <fstream>
@@ -42,8 +44,10 @@ int main()
 	cout << "Сумма чисел = " << sum << endl;
 	return 0;
 }
+```
 
-// Задача 4.2 «Знак числа»
+### Задача 4.2 «Знак числа»
+```C++
 #include <iostream>
 #include <windows.h>
 using namespace std;
@@ -76,8 +80,10 @@ int main()
 	cout << "Знак числа: " << sign(x) << endl;
 	return 0;
 }
+```
 
-// Задача 4.3 «Геометрические фигуры»
+### Задача 4.3 «Геометрические фигуры»
+```C++
 #include <iostream>
 #include <windows.h>
 #include <cmath>
@@ -124,8 +130,10 @@ int main()
 
 	return 0;
 }
+```
 
-// Задача 4.4 «Былая слава»
+### Задача 4.4 «Былая слава»
+```C++
 #include <iostream>
 #include <windows.h>
 #include <string>
@@ -159,8 +167,10 @@ int main()
 	}
 	return 0;
 }
+```
 
-// Задача 4.5 «Синусоида»
+### Задача 4.5 «Синусоида»
+```C++
 #include <iostream>
 #include <windows.h>
 #include <math.h>
@@ -189,8 +199,10 @@ int main()
 	
 	return 0;
 }
+```
 
-// Задача 4.6 «Автоматный распознаватель»
+### Задача 4.6 «Автоматный распознаватель»
+```C++
 #include <iostream>
 #include <windows.h>
 #include <string>
@@ -269,8 +281,10 @@ int main()
 	delete[] array;
 	return 0;
 }
+```
 
-// Задача 4.7 «Генератор псевдослучайных чисел»
+### Задача 4.7 «Генератор псевдослучайных чисел»
+```C++
 #include <iostream>
 #include <windows.h>
 using namespace std;
@@ -302,8 +316,10 @@ int main()
 	}
 	return 0;
 }
+```
 
-// Задача 4.8 «Умножение матриц»
+### Задача 4.8 «Умножение матриц»
+```C++
 #include <iostream>
 #include <windows.h>
 using namespace std;
@@ -384,8 +400,10 @@ int main()
 	cout << "Общая сумма денег, прошедших через руки продавцов : " << overall_sum << endl;
 	return 0;
 }
+```
 
-// Задача 4.9 «Системы счисления»
+### Задача 4.9 «Системы счисления»
+```C++
 #include <iostream>
 #include <windows.h>
 #include <string>
@@ -443,3 +461,4 @@ int main()
 	cout << "Результат: " << number_2 << endl;
 	return 0;
 }
+```
