@@ -1,4 +1,6 @@
-// Задание 1.1 «Имя»
+## Домашняя работа 1
+### Задание 1.1 «Имя»
+```C++
 #include <iostream>
 #include <cstdlib>
 using namespace std;
@@ -6,12 +8,14 @@ using namespace std;
 int main()
 {
   setlocate(LC_ALL, "Russian");
-  cout << "Александр" << endl;
+  cout << "Имя" << endl;
   system("pause");
   return 0;
 }
+```
 
-// Задание 1.2 «Арифметика»
+### Задание 1.2 «Арифметика»
+```C++
 #include <iostream>
 using namespace std;
 
@@ -37,8 +41,10 @@ int main()
   }
   return 0;
 }
+```
 
-// Задание 1.3 «Уравнение»
+### Задание 1.3 «Уравнение»
+```C++
 #include <iostream>
 using namespace std;
 
@@ -68,8 +74,10 @@ int main()
     }
     return 0;
 }
+```
 
-// Задание 1.4 «Еще уравнение»
+### Задание 1.4 «Еще уравнение»
+```C++
 #include <iostream>
 using namespace std;
 
@@ -131,8 +139,10 @@ int main()
     }
     return 0;
 }
+```
 
-// Задание 1.5 «Лампа со шторой»
+### Задание 1.5 «Лампа со шторой»
+```C++
 #include <iostream>
 using namespace std;
 
@@ -174,3 +184,4 @@ int main()
     }
     return 0;
 }
+```
