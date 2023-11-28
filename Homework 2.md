@@ -1,4 +1,6 @@
-// Задание 2.1 «Конус»
+## Домашняя работа 2
+### Задание 2.1 «Конус»
+```C++
 #include <iostream>
 using namespace std;
 
@@ -18,8 +20,10 @@ int main()
     cout << "S = " << pi * (pow(R, 2) + (R + r) * l + pow(r, 2)) << endl;
     return 0;
 }
+```
 
-// Задание 2 «Разветвление»
+### Задание 2.2 «Разветвление»
+```C++
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
@@ -60,8 +64,10 @@ int main()
     }
     return 0;
 }
+```
 
-// Задание 3 «Функция»
+### Задание 2.3 «Функция»
+```C++
 #include <iostream>
 #include <cstdlib>
 using namespace std;
@@ -106,8 +112,10 @@ int main()
     }
     return 0;
 }
+```
 
-// Задание 4 «Порядок»
+### Задание 2.4 «Порядок»
+```C++
 #include <iostream>
 using namespace std;
 
@@ -126,8 +134,10 @@ int main()
     }
     return 0;
 }
+```
 
-// Задание 5 «Порядок»
+### Задание 2.5 «Порядок»
+```C++
 #include <iostream>
 using namespace std;
 
@@ -146,3 +156,4 @@ int main()
         }
     }
 }
+```
