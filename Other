@@ -165,26 +165,13 @@ void removeDuplicates(int array[], int& n) {
     n = index + 1;
 }
 
-void minuses(string num1, string num2, int& minus) {
-    int array1[4]{}, array2[4]{};
-    int array1_size = 4, array2_size = 4;
-
-    for (int k = 0; k < 4; k++) {
-        array1[k] = num1[k];
-        array2[k] = num2[k];
-    }
-
-    sort(array1, array1 + 4);
-    sort(array2, array2 + 4);
-
-    removeDuplicates(array1, array1_size);
-    removeDuplicates(array2, array2_size);
-
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 3; j++)
-            if (array1[i] == array2[j]) {
+void minuses(string computer_number, string my_number, int& minus) {
+    for (int i = 0; i < 4; ++i) {
+        if (computer_number[i] != my_number[i]) {
+            if (my_number.find(computer_number[i]) != string::npos) {
                 minus++;
             }
+        }
     }
 }
 
@@ -257,4 +244,57 @@ int main()
         number_enter(my_number, 1);
         cout << endl;
     }
+}
+
+// Шарики
+#include <iostream>
+using namespace std;
+
+int* balls;
+int n;
+int perm_count = 0;
+
+void swap(int a, int b)
+{
+    int temp = balls[a];
+    balls[a] = balls[b];
+    balls[b] = temp;
+}
+
+void generate(int k)
+{
+    if (k == n)
+    {
+        for (int i = 0; i < n; i++)
+        {
+            if (balls[i] == i + 1)
+            {
+                perm_count++;
+                break;
+            }
+        }
+    }
+    else
+    {
+        for (int j = k; j < n; j++)
+        {
+            swap(k, j);
+            generate(k + 1);
+            swap(k, j);
+        }
+    }
+}
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    cout << "Введите количество шариков (n): ";
+    cin >> n;
+    balls = new int[n];
+    for (int i = 0; i < n; i++)
+        balls[i] = i + 1;
+    generate(0);
+
+    cout << "Количество перестановок: " << perm_count << endl;
+    delete[] balls;
 }
